@@ -1,9 +1,8 @@
 export default class appCtrl {
-
+	/* @ngInject */	
 	constructor($http){
 
 		this.http = $http;
-
 		//HEADER
 		this.items = ['DELETE ALL','ONLY FAVORITE','SEARCH'];
 		this.icons = ["fa fa-trash-o", "fa fa-star-o", "fa fa-search"];
@@ -60,7 +59,6 @@ export default class appCtrl {
 			method: 'GET',
 			url: `http://www.omdbapi.com/?s=${data.searchInput}&y=${data.yearInput}&type=${data.selectedValue}&plot=full&r=json&page=${data.page}`
 		}).then(function successCallback(response) {
-			console.log(response.data.Search);
 			self.parseResponse(response);
 		}, function errorCallback(response) {
 			console.log(response);
@@ -95,7 +93,7 @@ export default class appCtrl {
 	addToFavorite(e){
 		var target = e.target;
 		var movie = target.parentNode.parentNode.parentNode;
-		var title = movie.children[0].children[0].innerHTML;
+		var title = movie.children[0].children[0].children[0].innerHTML;
 
 		target.classList.toggle('star-shine-js');
 
@@ -110,10 +108,12 @@ export default class appCtrl {
 		const MOVIES_PLACE_IN_DOM = document.querySelector('.moviesSection .nonFavorites');
 		
 		for (let key in localStorage){
-			let movie = document.createElement('div');
-			movie.className = "movie fav";
-			movie.innerHTML = localStorage[key];
-			MOVIES_PLACE_IN_DOM.appendChild(movie);
+			if (key.indexOf('comments') == -1) {
+				let movie = document.createElement('div');
+				movie.className = "movie fav";
+				movie.innerHTML = localStorage[key];
+				MOVIES_PLACE_IN_DOM.appendChild(movie);
+			}
 		}
 	}
 

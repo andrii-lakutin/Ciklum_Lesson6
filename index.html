@@ -22,7 +22,6 @@
 		</ul>
 	</header>
 
-
 	<section class="searchSection">
 		<div class="search">
 			<input type="text" placeholder="Wanna find something?" ng-model="app.searchInput">
@@ -43,12 +42,16 @@
 		</div>
 	</section>
 
+	<ng-view></ng-view>
+
 	<section class="moviesSection">
 		<div class="nonFavorites">
 			<div class="movie" ng-repeat="item in app.searchResult">
-				<div class="poster" ng-style="{'background': 'url(' + item.Poster + ') 50% 50% no-repeat', 'background-size' : 'cover'}">
-					<div class= "shadow">{{item.Title}}</div>
-				</div>
+				<a ng-href="#/movie/{{item.Title}}">
+					<div class="poster" ng-style="{'background': 'url(' + item.Poster + ') 50% 50% no-repeat', 'background-size' : 	'cover'}">
+						<div class= "shadow">{{item.Title}}</div>
+					</div>
+				</a>
 				<div class="social">
 						<p>{{item.Year}}</p>
 						<p>{{item.Type}}</p>

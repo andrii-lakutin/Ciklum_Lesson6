@@ -1,5 +1,5 @@
 'use strict';
-
+// ANGULAR WEBPACK CONFIG!!!
 let webpack = require('webpack');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -23,11 +23,7 @@ module.exports = {
         loaders:[{
             test   : /\.js$/,
             exclude: /(node_modules|bower_components)/,             
-            loader : 'babel',                                   
-            query  : {
-              presets: ['es2015','react'],
-              plugins: ['transform-runtime']
-            }
+            loaders : ['ng-annotate', 'babel?presets[]=es2015,presets[]=react,plugins[]=transform-runtime']
         },
         {
             test  : /\.css$/, 
@@ -40,6 +36,10 @@ module.exports = {
         {
             test  : /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
             loader: 'url?name=images/[name].[ext]&limit=10000' 
+        },
+        {    
+            test  : /\.html$/,
+            loader : 'raw'
         }]
     },
 

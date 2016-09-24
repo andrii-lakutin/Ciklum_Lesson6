@@ -440,6 +440,10 @@ header ul li:hover {
   border-radius: 5px;
 }
 
+.moviesSection .movie a {
+  text-decoration: none;
+}
+
 .moviesSection .movie .poster {
   height: 370px;
   width: 100%;
@@ -572,6 +576,193 @@ header ul li:hover {
   .padding-if-search-hidden-js {
     padding-top: 120px;
   }
+}
+
+.details {
+  width: 100%;
+  text-align: center;
+  background: #212121;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.details .wrap {
+  min-width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.details .poster {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 200px;
+          flex: 1 1 200px;
+  height: 300px;
+  max-width: 200px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 20px auto;
+}
+
+.details .description {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 300px;
+          flex: 2 1 300px;
+  margin: 0 auto;
+  max-width: 400px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.details .description .title {
+  font-size: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  padding: 20px;
+}
+
+.details .description .plot {
+  padding: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.details .description .extra {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.details .comments {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0 auto;
+  max-width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+@media screen and (max-width: 850px) {
+  .details .comments {
+    max-width: 100%;
+  }
+}
+
+.details .comments .commentsPlace {
+  width: 90%;
+  min-height: 280px;
+  max-height: 400px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80%;
+          flex: 1 1 80%;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 10px 10px;
+  margin-top: 20px;
+  padding: 5px;
+  overflow: auto;
+  text-align: left;
+  word-wrap: break-word;
+  color: #5B206E;
+  font-weight: 600;
+}
+
+.details .comments .commentsPlace li {
+  margin-top: 10px;
+}
+
+.details .comments .commentsPlace li:first-child {
+  margin-top: 0px;
+}
+
+.details .comments input[type="text"] {
+  border: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 60%;
+          flex: 1 1 60%;
+  padding: 5px;
+  max-height: 30px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.details .comments input[type="text"]:focus {
+  outline: none;
+}
+
+.details .comments input[type="text"]::-webkit-input-placeholder {
+  color: #757575;
+  text-indent: 5px;
+  -webkit-transition: text-indent 500ms cubic-bezier(0.87, -0.41, 0.19, 1.441);
+  transition: text-indent 500ms cubic-bezier(0.87, -0.41, 0.19, 1.441);
+}
+
+.details .comments input[type="text"]::-moz-placeholder {
+  color: #757575;
+  text-indent: 5px;
+  -webkit-transition: text-indent 500ms cubic-bezier(0.87, -0.41, 0.19, 1.441);
+  transition: text-indent 500ms cubic-bezier(0.87, -0.41, 0.19, 1.441);
+}
+
+.details .comments input[type="text"]:-ms-input-placeholder {
+  color: #757575;
+  text-indent: 5px;
+  -webkit-transition: text-indent 500ms cubic-bezier(0.87, -0.41, 0.19, 1.441);
+  transition: text-indent 500ms cubic-bezier(0.87, -0.41, 0.19, 1.441);
+}
+
+.details .comments input[type="text"]::placeholder {
+  color: #757575;
+  text-indent: 5px;
+  -webkit-transition: text-indent 500ms cubic-bezier(0.87, -0.41, 0.19, 1.441);
+  transition: text-indent 500ms cubic-bezier(0.87, -0.41, 0.19, 1.441);
+}
+
+.details .comments input[type="text"]:focus::-webkit-input-placeholder {
+  text-indent: -300px;
+}
+
+.details .comments input[type="text"]:focus::-moz-placeholder {
+  text-indent: -300px;
+}
+
+.details .comments input[type="text"]:focus:-ms-input-placeholder {
+  text-indent: -300px;
+}
+
+.details .comments input[type="text"]:focus::placeholder {
+  text-indent: -300px;
+}
+
+.details .comments .btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15%;
+          flex: 1 1 15%;
+  padding: 5px;
+  max-height: 30px;
+  background: #5B206E;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 
