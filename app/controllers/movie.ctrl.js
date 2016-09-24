@@ -9,6 +9,7 @@ export default class movieCtrl {
 		$scope.runtime = "";
 		$scope.poster = "";
 		$scope.plot = "";
+		$scope.score ="";
 
 		$scope.input = "";
 		$scope.comments = [];
@@ -21,10 +22,6 @@ export default class movieCtrl {
 			}
 
 		}	
-
-		// $scope.reverse = function (string) {
-  // 			return string.split('').reverse().join('');
-		// }
 
 		$scope.http = function(newValue){
 			$http({
@@ -45,12 +42,12 @@ export default class movieCtrl {
 			$scope.runtime = data.Runtime;
 			$scope.poster = data.Poster;
 			$scope.plot = data.Plot;
+			$scope.score = data.imdbRating;
 
 			if (localStorage.getItem(`${$scope.title} comments`) != null) {
 				$scope.comments = localStorage.getItem(`${$scope.title} comments`).split(',');
 			}
 
-			console.log(localStorage.getItem(`${$scope.title}`));
 		}
 
     	$scope.$watch(function($scope){

@@ -33486,6 +33486,7 @@
 			$scope.runtime = "";
 			$scope.poster = "";
 			$scope.plot = "";
+			$scope.score = "";
 	
 			$scope.input = "";
 			$scope.comments = [];
@@ -33497,10 +33498,6 @@
 							localStorage.setItem($scope.title + " comments", $scope.comments);
 					}
 			};
-	
-			// $scope.reverse = function (string) {
-			// 			return string.split('').reverse().join('');
-			// }
 	
 			$scope.http = function (newValue) {
 					$http({
@@ -33521,12 +33518,11 @@
 					$scope.runtime = data.Runtime;
 					$scope.poster = data.Poster;
 					$scope.plot = data.Plot;
+					$scope.score = data.imdbRating;
 	
 					if (localStorage.getItem($scope.title + " comments") != null) {
 							$scope.comments = localStorage.getItem($scope.title + " comments").split(',');
 					}
-	
-					console.log(localStorage.getItem("" + $scope.title));
 			};
 	
 			$scope.$watch(function ($scope) {
@@ -33593,7 +33589,7 @@
 /* 43 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"details\">\r\n\t<div class=\"wrap\">\r\n\t\t<div class=\"poster\" ng-style=\"{'background': 'url(' + poster + ') 50% 50% no-repeat', 'background-size' : 'cover'}\"></div>\r\n\t\t<div class=\"description\">\r\n\t\t\t<div class=\"title\">{{title}}</div>\r\n\t\t\t<div class=\"plot\">{{plot}}</div>\r\n\t\t\t<div class=\"extra\">\r\n\t\t\t\t<div class=\"runtime\">{{runtime}}</div>\r\n\t\t\t\t<div class=\"year\">{{year}}</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"comments\">\r\n\t\t\t<div class=\"commentsPlace\">\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li ng-repeat=\"comment in comments track by $index\">{{comment}}</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t\t<input type=\"text\" placeholder=\"Leave comment\" ng-model=\"input\">\r\n\t\t\t<div class=\"btn\" ng-click=\"send()\">Send</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+	module.exports = "<div class=\"details\">\r\n\t<div class=\"wrap\">\r\n\t\t<div class=\"poster\" ng-style=\"{'background': 'url(' + poster + ') 50% 50% no-repeat', 'background-size' : 'cover'}\"></div>\r\n\t\t<div class=\"description\">\r\n\t\t\t<div class=\"title\">{{title}}</div>\r\n\t\t\t<div class=\"plot\">{{plot}}</div>\r\n\t\t\t<div class=\"extra\">\r\n\t\t\t\t<div class=\"runtime\">{{runtime}}</div>\r\n\t\t\t\t<div class=\"score\">IMDB: {{score}}</div>\r\n\t\t\t\t<div class=\"year\">{{year}}</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"comments\">\r\n\t\t\t<div class=\"commentsPlace\">\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li ng-repeat=\"comment in comments track by $index\">{{comment}}</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t\t<input type=\"text\" placeholder=\"Leave comment\" ng-model=\"input\">\r\n\t\t\t<div class=\"btn\" ng-click=\"send()\">Send</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
 
 /***/ },
 /* 44 */
